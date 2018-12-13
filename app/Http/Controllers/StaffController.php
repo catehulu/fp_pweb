@@ -43,15 +43,19 @@ class StaffController extends Controller
     {
         $filename = pathinfo($request->file('cover_image')->getClientOriginalName(), PATHINFO_FILENAME);
         $uniqueFilename = $filename.'_'.time().'.'.$request->file('cover_image')->getClientOriginalExtension();
-        $path = $request->file('cover_image')->storeAs('public/cover_image',$uniqueFilename);
-
+        
         film::create([
             'nama_film' => request('nama_film'),
             'deskripsi_film' => request('deskripsi_film'),
             'durasi' => request('durasi'),
-            'cover_image' => $uniqueFilename
+            'cover_image' => $uniqueFilename,
+            'produser' => request('produser'),
+            'director' => request('director'),
+            'age_rating' => request('age_rating'),
+            'genre' => request('genre')
         ]);
-
+        $path = $request->file('cover_image')->storeAs('public/cover_image',$uniqueFilename);
+        
         return redirect()->route('admin.create');
     }
 
