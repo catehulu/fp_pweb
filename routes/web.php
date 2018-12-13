@@ -18,3 +18,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/test', function () {
+    return view('admin.inputfilm');
+});
+
+Route::post('/admin/input_film', 'StaffController@store')->name('admin.store');
+Route::get('/admin/input_film', 'StaffController@create')->name('admin.create');
+Route::get('/admin','StaffController@index')->name('admin.index');
+
+Route::get('/admin/readone/{id}', 'StaffController@show')->name('admin.readone');
