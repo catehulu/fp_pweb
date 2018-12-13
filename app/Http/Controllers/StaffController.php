@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\film;
 
 class StaffController extends Controller
 {
@@ -18,7 +19,8 @@ class StaffController extends Controller
      */
     public function index()
     {
-        //
+        $film = film::all();
+        return view('admin.index',compact('film'));
     }
 
     /**
@@ -28,7 +30,7 @@ class StaffController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.inputfilm');
     }
 
     /**
@@ -39,7 +41,18 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $filename = pathinfo($request->file('cover_image')->getClientOriginalName(), PATHINFO_FILENAME);
+        $uniqueFilename = $filename.'_'.time().'.'.$request->file('cover_image')->getClientOriginalExtension();
+        $path = $request->file('cover_image')->storeAs('public/cover_image',$uniqueFilename);
+
+        film::create([
+            'nama_film' => request('nama_film'),
+            'deskripsi_film' => request('deskripsi_film'),
+            'durasi' => request('durasi'),
+            'cover_image' => $uniqueFilename
+        ]);
+
+        return redirect()->route('admin.create');
     }
 
     /**
@@ -50,7 +63,8 @@ class StaffController extends Controller
      */
     public function show($id)
     {
-        //
+        $film = film::find($id)->first();
+        return view('admin.readone',compact('film'));
     }
 
     /**
