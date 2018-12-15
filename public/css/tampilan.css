@@ -219,3 +219,19 @@
   }
 
 /* */
+
+/* style untuk fil detil penayangan */
+
+.columndetilPenayangan{
+    float: left;
+    width: 93%;
+    padding: 0px 0px 0px 0px;
+    text-align: left;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+    margin: 10px 10px 10px 50px;
+    border-style:solid black; 
+    background-color: gray;
+    border-width: 5px;
+}
