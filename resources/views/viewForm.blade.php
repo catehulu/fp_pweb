@@ -61,10 +61,17 @@
                 </div>
 
                 <!-- foto -->
-                <label for="formDurasi"><b>Input foto Film</b></label>
+                <label for="formFoto"><b>Input foto Film</b></label>
+                <script>
+                    function uploadFile(target) {
+                        document.getElementById("file-name").innerHTML = target.files[0].name;
+                    }
+                </script>
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="fotoFilm">
-                    <label class="custom-file-label" for="fotoFilm">Choose file</label>
+                    <input type="file" class="custom-file-input" id="fotoFilm" onchange='uploadFile(this)'>
+                    <label class="custom-file-label">
+                        <span id="file-name" class="file-box"></span>
+                    </label>    
                 </div>
                 <button type="button" class="btn btn-secondary btn-lg mt-4">Submit</button>
             </form>
