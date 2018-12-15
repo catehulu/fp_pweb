@@ -12,7 +12,7 @@
 .columnfoto {
     float: left;
     width: 25%;
-    padding: 150px;
+    padding: 0px 0px 0px 0px;
     text-align: center;
     font-size: 25px;
     cursor: pointer;
@@ -22,6 +22,11 @@
     background-color: gray;
     border-width: 5px;
   }
+
+#stGambar{
+    max-width: 100%;
+    max-height: 100%;
+}
 
 .columnsinopsis {
     float: left;
@@ -35,6 +40,11 @@
     border-style:solid black; 
     background-color: gray;
     border-width: 5px;
+}
+
+#isiSinopsis{
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .columnumur{
@@ -62,6 +72,11 @@
     border-style:solid black; 
     background-color: gray;
     border-width: 5px;
+}
+#tombol{
+    max-width: 100%;
+    max-height: 100%;
+    margin: 10px;
 }
 
 .columngenre {

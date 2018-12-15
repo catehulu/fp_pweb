@@ -7,6 +7,24 @@
         </div>
         <div style="margin:50px">
             <form>
+                <!-- date picker -->
+                <div class="form-group" style="border-style:solid;border-color:gray;padding:10px">
+                    <label for="jamPenayangan"><b>Tanggal Penayangan</b></label>
+                    <br>
+                    <div class="input-group date">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span><input type="date" class="form-control" id="inputDate" name="inputDate" placeholder="Enter date">
+                    </div>
+                    <script>
+                    </script>
+                    {{-- <script>
+                    
+                    </script>
+                    <div class="ui calendar" id="example2">
+                        
+                    </div>
+                    <br/> --}}
+                </div>
+
                 <!--jam penayangan -->
                 <div class="form-group" style="border-style:solid;border-color:gray;padding:10px">
                     <label for="jamPenayangan"><b>Jam Penayangan</b></label>

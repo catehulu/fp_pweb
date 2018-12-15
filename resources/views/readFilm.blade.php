@@ -10,11 +10,13 @@
         <!-- foto-->
         <div class="row">
             <div class="column columnfoto" style="border-style: groove;">
-                <h2>foto</h2>
-                <img src="" alt="" style="width:100%;height:100%">
+                <img src="{{asset('storage/postingan.jpg')}}" alt="coba" id="stGambar">
             </div>
             <div class="column columnsinopsis" style="border-style: groove;">
                 <h2>sinopsis : </h2>
+                <div id="isiSinopsis">
+                    sebuah film yang di perankan seorang aktor ganteng bernama rama dan seterusnya. ini sebuah contoh sinopsis yang real
+                </div>
             </div>
         </div>
         <div class="row">
@@ -22,7 +24,7 @@
                 <h2>umr</h2>
             </div>
             <div class="column columnbuy" style="border-style: groove;">
-                <h2>button Buy</h2>  
+                    <button type="button" class="btn btn-success btn-lg" id="tombol">Buy Ticket</button>  
             </div>
             <div class="column columngenre" style="border-style: groove;">
                 <h2 id="genre">genre : </h2>
