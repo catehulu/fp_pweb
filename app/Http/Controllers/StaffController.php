@@ -43,7 +43,7 @@ class StaffController extends Controller
     {
         $filename = pathinfo($request->file('cover_image')->getClientOriginalName(), PATHINFO_FILENAME);
         $uniqueFilename = $filename.'_'.time().'.'.$request->file('cover_image')->getClientOriginalExtension();
-        
+
         film::create([
             'nama_film' => request('nama_film'),
             'deskripsi_film' => request('deskripsi_film'),
@@ -67,8 +67,8 @@ class StaffController extends Controller
      */
     public function show($id)
     {
-        $film = film::find($id)->first();
-        return view('admin.readone',compact('film'));
+        $films = film::where('id_film',$id)->first();
+        return view('admin.readone',compact('films'));
     }
 
     /**
@@ -100,8 +100,9 @@ class StaffController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        film::where('id_film',request('id_film'))->delete();
+        return redirect()->route('admin.index')->with('success','Film berhasil dihapus');
     }
 }

@@ -27,3 +27,5 @@ Route::get('/admin/input_film', 'StaffController@create')->name('admin.create');
 Route::get('/admin','StaffController@index')->name('admin.index');
 
 Route::get('/admin/readone/{id}', 'StaffController@show')->name('admin.readone');
+
+Route::post('/admin/delete', 'StaffController@destroy')->name('admin.delete');
