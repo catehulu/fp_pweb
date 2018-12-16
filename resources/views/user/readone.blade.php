@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div style="border-style:outset;margin:25px 50px;">
+    <div style="border-style:outset;margin:25px 50px;" class="back">
         <!-- tampilan judul Film -->
         <div id="readfilmjud">
             <h1 class="mt-3"><b>{{$films->nama_film}}</b></h1>
@@ -13,11 +13,14 @@
                 <img src="{{asset('storage/cover_image/'.$films->cover_image)}}" alt="" style="width:100%;height:100%">
             </div>
             <div class="column columnsinopsis" style="border-style: groove;">
-                <h2>sinopsis : {{$films->deskripsi_film}}</h2>
+                <h2 style="font-family: fantasy;">sinopsis : </h2>
+                <p>
+                    sebuah film yang di perankan seorang aktor ganteng bernama rama dan seterusnya. ini sebuah contoh sinopsis yang real
+                </p>
             </div>
         </div>
         <div class="row">
-            <div class="column columnumur" style="border-style: groove;">
+            <div class="column columnumuruser" style="border-style: groove;">
                 @if ($films->age_rating == 1)
                     <h2>Semua Umur</h2>
                 @elseif ($films->age_rating == 2)
@@ -29,7 +32,7 @@
                 @endif
             </div>
             <div class="column columnbuy" style="border-style: groove;">
-                <a href="{{route('user.beli',$films->id_film)}}" class="btn btn-primary">Beli disni</a>  
+                    <button type="button" class="btn btn-success btn-lg" id="tombol">Buy Ticket</button>  
             </div>
             <div class="column columngenre" style="border-style: groove;">
                 <h2 id="genre">genre : {{$films->genre}}</h2>
@@ -38,10 +41,15 @@
 
         <div class="row">
             <div class="column columnjam" style="border-style: groove;">
-                <h2>jam penayangan</h2>
+                    <span><h2 style="margin: 10px 0px 0px 10px; font-family: fantasy;">jam penayangan :</h2></span>
                 @if ($tayang != NULL)
                     @foreach ($tayang as $tayangs)
-                        <a href="" class="btn btn-primary">{{$tayangs->waktu_mulai}}</a>
+                        <a href="">
+                            <button type="button" class="btn btn-secondary" style="margin: 10px 10px 10px 10px; font-family:'Times New Roman', Times, serif">
+                                tanggal penayangan jasnajskjdsasjdlj
+                            </button>
+                        </a>
+                        {{-- <a href="" class="btn btn-primary">{{$tayangs->waktu_mulai}}</a> --}}
                     @endforeach
                 @endif
             </div>

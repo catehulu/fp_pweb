@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
-<div style="border-style:outset;margin:25px 50px;">
+<div style="border-style:outset;margin:25px 50px;" class="back">
         <div style="text-align:center;border-bottom:solid gray;margin:25px;">
             <h1 class="mt-3"><b>Input Penayangan</b></h1>
         </div>
@@ -10,10 +9,14 @@
             <form action="{{route('admin.sPenayangan')}}" method="post">
                 @csrf
                 <!--tanggal penayangan -->
+
                 <div class="form-group" style="border-style:solid;border-color:gray;padding:10px">
-                    <input type="text" value="{{$film->id_film}}" name="id_film" hidden>
-                    <input type="date" name="tanggal_film" id="">
-                </div>
+                    <label for="jamPenayangan"><b>Tanggal Penayangan</b></label>
+                    <br>
+                    <div class="input-group date">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span><input type="date" class="form-control" id="inputDate" name="inputDate" placeholder="Enter date">
+                    </div>
+                </div>  
                 <!--jam penayangan -->
                 <div class="form-group" style="border-style:solid;border-color:gray;padding:10px">
                     <label for="jamPenayangan"><b>Jam Penayangan</b></label>
