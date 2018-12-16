@@ -7,7 +7,7 @@
         </div>
         <div class="card-columns" >
         @foreach ($film as $films)
-            <div class="card" style="width:300px;">
+            <div class="card shadow-lg" style="width:300px;">
                 <img class="card-img-top" src="{{asset('storage/cover_image/'.$films->cover_image.'')}}" alt="gambar film" style="width: 100%; height:300px;">
                 <div class="card-body" style="text-align:left">
                     <label for="nama_film">Nama Film</label>

@@ -1,10 +1,24 @@
-body{
-    background-color: 	#101010;
+.kepalatabel{
+    background-color: #29465d;
+    color: white;
+}
+
+.warnaNavbar{
+    background-color: #193242;
+}
+
+.inputPenayangan{
+    background-color: #29465d;
+    color: white;
+}
+
+body, .b1{
+    background-color: #cfdad4;
 }
 
 .back{
-    background-color: #133337;
-    color: #eeeeee;
+    background-color: #ebebeb;
+    color: black;
 }
 
 #tombol{
@@ -13,13 +27,13 @@ body{
 
 #readfilmjud {
     text-align: center;
-    color: #eeeeee;
+    color: black;
     border-bottom:solid gray;
     margin:25px;
 }
 
 .card{
-    background-color: #003366;
+    background-color: #29465d;
 }
 
 /* body {
@@ -36,7 +50,7 @@ body{
     color: white;
     margin: 10px 10px 10px 50px;
     border-style:solid black; 
-    background-color: gray;
+    background-color: #29465d;
     border-width: 5px;
   }
 
@@ -55,7 +69,7 @@ body{
     color: white;
     margin: 10px 10px 10px 50px;
     border-style:solid black; 
-    background-color: #101010;
+    background-color: #29465d;
     border-width: 5px;
 }
 
@@ -74,7 +88,7 @@ body{
     color: white;
     margin: -10px 0px 10px 50px;
     border-style:solid black; 
-    background-color: #101010;
+    background-color: #29465d;
     border-width: 5px;
 }
 .columnumuradmin{
@@ -88,7 +102,7 @@ body{
     color: white;
     margin: -10px 0px 10px 50px;
     border-style:solid black; 
-    background-color: #101010;
+    background-color: #29465d;
     border-width: 5px;
 }
 .columnbuy{
@@ -101,7 +115,7 @@ body{
     color: white;
     margin: -10px 0px 10px 0px;
     border-style:solid black; 
-    background-color: #101010;
+    background-color: #29465d;
     border-width: 5px;
 }
 #tombol{
@@ -121,7 +135,7 @@ body{
     color: #eeeeee;
     margin: -10px 10px 10px 60px;
     border-style:solid black; 
-    background-color: #101010;
+    background-color: #29465d;
     border-width: 5px;
 }
 
@@ -136,7 +150,7 @@ body{
     color: white;
     margin: 30px 10px 10px 50px;
     border-style:solid black; 
-    background-color: 	#101010;
+    background-color: #29465d;
     border-width: 5px;
 }
 .columndurasi {
@@ -150,7 +164,7 @@ body{
     color: white;
     margin: 30px 10px 10px 50px;
     border-style:solid black; 
-    background-color: #101010;
+    background-color: #29465d;
     border-width: 5px;
 }
 
@@ -165,7 +179,7 @@ body{
     color: white;
     margin: 30px 10px 30px 50px;
     border-style:solid black; 
-    background-color: #101010;
+    background-color: #29465d;
     border-width: 5px;
 }
 

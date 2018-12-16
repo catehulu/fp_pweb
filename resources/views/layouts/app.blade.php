@@ -30,7 +30,7 @@
 </head>
 <body>
     <div id="app">
-        <nav style="font-size:20px" class="navbar navbar-expand-lg bg-dark navbar-laravel">
+        <nav style="font-size:20px" class="navbar navbar-expand-lg navbar-laravel warnaNavbar">
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="{{asset('storage/compawny_logo.png')}}" alt="Logo" style="width:10vh;">
