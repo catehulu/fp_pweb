@@ -35,7 +35,7 @@ Route::patch('/admin/readone/{id}', 'StaffController@update')->name('admin.updat
 Route::get('/admin/buat_penayangan/{id}', 'StaffController@createPenayangan')->name('admin.cPenayangan');
 Route::post('/admin/buat_penayangan', 'StaffController@storePenayangan')->name('admin.sPenayangan');
 
-Route::get('/admin/transaksi', 'StaffController@transaksi');
+Route::get('/admin/transaksi', 'StaffController@transaksi')->name('admin.transaksi');
 
 Route::get('/', 'UserController@index' )->name('user.index');
 Route::get('/film/{id}', 'UserController@show')->name('user.readone');

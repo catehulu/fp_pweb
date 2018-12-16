@@ -13,10 +13,8 @@
                 <img src="{{asset('storage/cover_image/'.$films->cover_image)}}" alt="" style="width:100%;height:100%">
             </div>
             <div class="column columnsinopsis" style="border-style: groove;">
-                <h2 style="font-family: fantasy;">sinopsis : </h2>
-                <p>
-                    sebuah film yang di perankan seorang aktor ganteng bernama rama dan seterusnya. ini sebuah contoh sinopsis yang real
-                </p>
+                <h2 style="font-family: fantasy;">Sinopsis : </h2>
+                <p> {{$films->deskripsi_film}}</p>
             </div>
         </div>
         <div class="row">
@@ -32,25 +30,24 @@
                 @endif
             </div>
             <div class="column columnbuy" style="border-style: groove;">
-                    <button type="button" class="btn btn-success btn-lg" id="tombol">Buy Ticket</button>  
+                <a href="{{route('user.beli',$films->id_film)}}" class="btn btn-success btn-lg" id="tombol">Buy Tickets!</a>
             </div>
             <div class="column columngenre" style="border-style: groove;">
-                <h2 id="genre">genre : {{$films->genre}}</h2>
+                <h2 id="genre">Genre : {{$films->genre}}</h2>
             </div>
         </div>
 
         <div class="row">
             <div class="column columnjam" style="border-style: groove;">
-                    <span><h2 style="margin: 10px 0px 0px 10px; font-family: fantasy;">jam penayangan :</h2></span>
-                @if ($tayang != NULL)
-                    @foreach ($tayang as $tayangs)
-                        <a href="">
-                            <button type="button" class="btn btn-secondary" style="margin: 10px 10px 10px 10px; font-family:'Times New Roman', Times, serif">
-                                tanggal penayangan jasnajskjdsasjdlj
-                            </button>
-                        </a>
-                        {{-- <a href="" class="btn btn-primary">{{$tayangs->waktu_mulai}}</a> --}}
-                    @endforeach
+                @if ($tayang->count() > 0)
+                <span><h2 style="margin: 10px 0px 0px 10px; font-family: fantasy;">Jadwal Penayangan :</h2></span>
+                @foreach ($tayang as $tayangs)
+                    <a class="btn btn-secondary" style="margin: 10px 10px 10px 10px; font-family:'Times New Roman', Times, serif">
+                        {{$tayangs->waktu_mulai}}
+                    </a>
+                @endforeach
+                @else
+                    <span><h2 style="margin: 10px 0px 0px 10px; font-family: fantasy;">Penayangan untuk film ini tidak ada</h2></span>
                 @endif
             </div>
         </div>
@@ -69,7 +66,7 @@
         </div>
 
         <div>
-            <span><a href="{{route('admin.index')}}" id="tombolkembali" class="btn btn-outline-secondary">Kembali</a></span>
+            <span><a href="{{route('user.index')}}" id="tombolkembali" class="btn btn-outline-secondary">Kembali</a></span>
         </div>
         
     </div>

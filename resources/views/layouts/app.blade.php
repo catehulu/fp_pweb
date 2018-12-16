@@ -26,40 +26,35 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/tampilan.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('compawny_logo_tv2_1.ico') }}">
 </head>
 <body>
     <div id="app">
         <nav style="font-size:20px" class="navbar navbar-expand-lg bg-dark navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <img src="app/public/21_img.jpg" alt="Logo" style="width:5px;">
+                    <img src="{{asset('storage/compawny_logo.png')}}" alt="Logo" style="width:10vh;">
                   </a>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav mr-auto nav-pills" style="padding:5px;">
                             <li class="nav-item">
-                              <a class="nav-link" data-toggle="pill" href="#home">Home</a>
+                              <a class="nav-link" href="{{route('user.index')}}">Sedang Tayang</a>
                             </li>
-                            <li class="nav-item">
-                              <a class="nav-link" data-toggle="pill" href="#profile">Tayangan</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" data-toggle="pill" href="#">Film</a>
-                            </li>
+                            @auth
+                                <li class="nav-item">
+                                <a class="nav-link" href="{{route('admin.index')}}">List Film</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="{{route('admin.transaksi')}}">History Transaksi</a>
+                                </li>
+                            @endauth
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="nav ml-auto nav-tabs nav-pills">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="pill" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="pill" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

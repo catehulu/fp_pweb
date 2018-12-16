@@ -149,6 +149,6 @@ class StaffController extends Controller
             return redirect()->route('admin.cPenayangan',request('id_film'))->with('error','Penayangan sudah ada');
         }
 
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.index')->with('success','Penayangan Berhasil Dibuat');
     }
 }

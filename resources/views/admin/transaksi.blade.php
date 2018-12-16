@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div style="border-style:outset;margin:25px 50px;" class="back">
+<div style="border-style:outset;" class="back container" align="center">
     <div style="text-align:center;border-bottom:solid gray;margin:25px;">
         <h1 class="mt-3"><b>Data Transaksi</b></h1>
     </div>
 
-    <table class="table" style="margin: 10px 0px 10px 50px; width:93%;">
+    <table class="table" style="width:93%;">
 
         <thead class="thead-dark">
             <tr style="text-align:center;">

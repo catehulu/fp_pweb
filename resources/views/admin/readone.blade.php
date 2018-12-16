@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div style="border-style:outset;margin:25px 50px;" class="back">
+    <div style="border-style:outset" class="back container">
         <!-- tampilan judul Film -->
         <div id="readfilmjud">
             <h1 class="mt-3"><b>{{$films->nama_film}}</b></h1>
@@ -13,7 +13,7 @@
                 <img src="{{asset('storage/cover_image/'.$films->cover_image)}}" alt="" style="width:100%;height:100%">
             </div>
             <div class="column columnsinopsis" style="border-style: groove;">
-                <h2>sinopsis :</h2>
+                <h2>Sinopsis :</h2>
                 <p> {{$films->deskripsi_film}}</p>
             </div>
         </div>
@@ -30,46 +30,41 @@
                 @endif
             </div>
             <div class="column columngenre" style="border-style: groove;">
-                <h2 id="genre">genre : {{$films->genre}}</h2>
+                <h2 id="genre">Genre : {{$films->genre}}</h2>
             </div>
         </div>
 
         <div class="row">
             <div class="column columnjam" style="border-style: groove;">
-                <span><h2 style="margin: 10px 0px 0px 10px; font-family: fantasy;">jam penayangan :</h2></span>
-                @if ($tayang != NULL)
-                    @foreach ($tayang as $tayangs)
-                        <a href="">
-                            <button type="button" class="btn btn-secondary" style="margin: 10px 10px 10px 10px">
-                                {{$tayangs->waktu_mulai}}
-                            </button>
-                        </a>
-                    @endforeach
+                @if ($tayang->count() > 0)
+                <span><h2 style="margin: 10px 0px 0px 10px; font-family: fantasy;">Jadwal Penayangan :</h2></span>
+                @foreach ($tayang as $tayangs)
+                    <a class="btn btn-secondary" style="margin: 10px 10px 10px 10px; font-family:'Times New Roman', Times, serif">
+                        {{$tayangs->waktu_mulai}}
+                    </a>
+                @endforeach
+                @else
+                    <span><h2 style="margin: 10px 0px 0px 10px; font-family: fantasy;">Penayangan untuk film ini tidak ada</h2></span>
                 @endif
-                <div>
-                    <button type="button" class="btn btn-secondary" style="margin: 10px 10px 10px 1275px;">
-                        +
-                    </button>
-                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="column columndurasi" style="border-style: groove;">
-                <h2>durasi : {{$films->durasi}} menit</h2>
+                <h2>Durasi : {{$films->durasi}} menit</h2>
             </div>
         </div>
 
         <div class="row">
             <div class="column columndata" style="border-style: groove;">
-                <div><h2>produser : {{$films->produser}}</h2></div>
-                <div><h2>director : {{$films->director}}</h2></div>
+                <div><h2>Produces : {{$films->produser}}</h2></div>
+                <div><h2>Direktor : {{$films->director}}</h2></div>
             </div>
         </div>
 
         <div>
             <span><a href="{{route('admin.index')}}" id="tombolkembali" class="btn btn-outline-secondary">Kembali</a></span>
-            <span><button type="button" id="tomboledit" class="btn btn-outline-secondary">edit</button></span>
+            <span><button type="button" id="tomboledit" class="btn btn-outline-secondary">Edit</button></span>
             <span><button type="submit" id="tomboldelete" class="btn btn-outline-secondary" form="delete">Delete</button></span>
             <form id="delete" action="{{route('admin.delete')}}" method="post" hidden>
                     @csrf

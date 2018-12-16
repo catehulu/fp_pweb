@@ -52,7 +52,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $films = film::where('id_film',$id)->first();;
+        $films = film::where('id_film',$id)->first();
         $tayang = tayang::where('id_film',$id)->get();
         return view('user.readone',compact('films','tayang'));
         

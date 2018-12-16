@@ -19,7 +19,6 @@ body{
 }
 
 .card{
-    margin: 10px 20px 10px 75px;
     background-color: #003366;
 }
 
@@ -171,13 +170,16 @@ body{
 }
 
 #tombolkembali {
-    margin: 0px 0px 20px 50px;
+    margin-left: 3vh;
+    margin-bottom: 3vh;
 }
 #tomboledit {
-    margin: 0px 0px 20px 1070px;
+    margin-left: 3vh;
+    margin-bottom: 3vh;
 }
 #tomboldelete {
-    margin: 0px 0px 20px 30px;
+    margin-left: 3vh;
+    margin-bottom: 3vh;
 }
 
 /* untuk radi button */
@@ -272,5 +274,7 @@ body{
     border-width: 5px;
 }
 
-
+.nav-link:hover{
+    background-color: #fff;
+}
 
