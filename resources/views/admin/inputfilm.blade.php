@@ -3,7 +3,7 @@
 @section('content')
     <div style="border-style:outset;margin:25px 50px;" class="back">
         <div style="text-align:center;border-bottom:solid gray;margin:25px;">
-            <h1 class="mt-3"><b>Form</b></h1>
+            <div class="mt-3"><b>Form</b></div>
         </div>
         <div style="margin:50px">
             <form action="{{route('admin.store')}}" method="post" enctype="multipart/form-data">

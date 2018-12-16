@@ -29,7 +29,7 @@
 </head>
 <body>
     <div id="app">
-        <nav style="font-size:20px" class="navbar navbar-expand-lg bg-dark navbar-laravel">
+        <nav style="font-size:20px" class="navbar navbar-expand-lg navbar-laravel warnaNavbar">
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="app/public/21_img.jpg" alt="Logo" style="width:5px;">

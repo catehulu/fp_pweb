@@ -8,7 +8,7 @@
 
     <table class="table" style="margin: 10px 0px 10px 50px; width:93%;">
 
-        <thead class="thead-dark">
+        <thead class="kepalatabel">
             <tr style="text-align:center;">
             <th scope="col">ID_Transaksi</th>
             <th scope="col">ID_tayang</th>

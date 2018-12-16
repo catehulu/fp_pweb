@@ -2,7 +2,7 @@
 
 @section('content')
 <div style="border-style:outset;margin:25px 50px;" class="back">
-        <div style="text-align:center;border-bottom:solid gray;margin:25px;">
+        <div class="readfiljud" style="text-align:center;border-bottom:solid gray;margin:25px;">
             <h1 class="mt-3"><b>Input Penayangan</b></h1>
         </div>
         <div style="margin:50px">
