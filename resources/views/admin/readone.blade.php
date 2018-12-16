@@ -65,8 +65,8 @@
         <div>
             <span><a href="{{route('admin.index')}}" id="tombolkembali" class="btn btn-outline-secondary">Kembali</a></span>
             <span><button type="button" id="tomboledit" class="btn btn-outline-secondary">edit</button></span>
-            <span><button form="delete" type="submit" id="tomboldelete" class="btn btn-outline-secondary">Delete</button></span>
-            <form id='delete'action="{{route('admin.delete')}}" action="post" hidden>
+            <span><button type="submit" id="tomboldelete" class="btn btn-outline-secondary" form="delete">Delete</button></span>
+            <form id="delete" action="{{route('admin.delete')}}" method="post" hidden>
                     @csrf
                     <input name="id_film" type="text" value="{{$films->id_film}}" hidden>
             </form>
