@@ -46,6 +46,11 @@
                         </a>
                     @endforeach
                 @endif
+                <div>
+                    <button type="button" class="btn btn-secondary" style="margin: 10px 10px 10px 1275px;">
+                        +
+                    </button>
+                </div>
             </div>
         </div>
 
