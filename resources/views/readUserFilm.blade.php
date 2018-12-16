@@ -20,8 +20,11 @@
             </div>
         </div>
         <div class="row">
-            <div class="column columnumuradmin" style="border-style: groove;">
+            <div class="column columnumuruser" style="border-style: groove;">
                 <h2  style="margin:15px 0px 15px 0px;">17+</h2>
+            </div>
+            <div class="column columnbuy" style="border-style: groove;">
+                    <button type="button" class="btn btn-success btn-lg" id="tombol">Buy Ticket</button>  
             </div>
             <div class="column columngenre" style="border-style: groove;">
                 <h2 id="genre">genre : </h2>
@@ -34,11 +37,6 @@
                 <button type="button" class="btn btn-secondary" style="margin: 10px 10px 10px 10px">
                     tanggal penayangan jasnajskjdsasjdlj
                 </button>
-                <div>
-                    <button type="button" class="btn btn-secondary" style="margin: 10px 10px 10px 1275px;">
-                        +
-                    </button>
-                </div>
             </div>
         </div>
 
@@ -57,8 +55,6 @@
 
         <div>
         <span><button type="button" id="tombolkembali" class="btn btn-outline-secondary">kembali</button></span>
-        <span><button type="button" id="tomboledit" class="btn btn-outline-secondary">edit</button></span>
-        <span><button type="button" id="tomboldelete" class="btn btn-outline-secondary">delete</button></span>
         </div>        
         
     </div>

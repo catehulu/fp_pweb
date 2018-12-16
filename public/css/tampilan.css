@@ -47,9 +47,22 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-.columnumur{
+.columnumuruser{
     float: left;
     width: 10%;
+    padding: 0px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+    margin: -10px 0px 10px 50px;
+    border-style:solid black; 
+    background-color: gray;
+    border-width: 5px;
+}
+.columnumuradmin{
+    float: left;
+    width: 25%;
     padding: 0px;
     text-align: center;
     font-size: 25px;
@@ -85,6 +98,7 @@
     padding: 10px;
     text-align: left;
     font-size: 25px;
+    font-family: fantasy;
     cursor: pointer;
     color: white;
     margin: -10px 10px 10px 60px;
@@ -235,3 +249,6 @@
     background-color: gray;
     border-width: 5px;
 }
+
+
+
