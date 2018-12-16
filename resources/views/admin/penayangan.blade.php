@@ -10,7 +10,7 @@
                 @csrf
                 <!--tanggal penayangan -->
 
-                <div class="form-group" style="border-style:solid;border-color:gray;padding:10px">
+                <div class="form-group inputPenayangan" style="border-style:solid;border-color:gray;padding:10px">
                     <label for="jamPenayangan"><b>Tanggal Penayangan</b></label>
                     <br>
                     <div class="input-group date">
@@ -18,7 +18,7 @@
                     </div>
                 </div>  
                 <!--jam penayangan -->
-                <div class="form-group" style="border-style:solid;border-color:gray;padding:10px">
+                <div class="form-group inputPenayangan" style="border-style:solid;border-color:gray;padding:10px">
                     <label for="jamPenayangan"><b>Jam Penayangan</b></label>
                     <br>
                     <label>
@@ -44,14 +44,14 @@
                 </div>
 
                 <!--studio -->
-                <div class="form-group" style="border-style:solid;border-color:gray;padding:10px">
+                <div class="form-group inputPenayangan" style="border-style:solid;border-color:gray;padding:10px">
                     <label for="studio"><b>Studio</b></label>
                     <br>
                     <input name="studio" class="form-control" type="number" value="0" id="studio" style="margin:0px 50px 0px 0px">
                 </div>
 
                 <!-- harga -->
-                <div class="form-group" style="border-style:solid;border-color:gray;padding:10px">
+                <div class="form-group inputPenayangan" style="border-style:solid;border-color:gray;padding:10px">
                     <label for="harga_tiket"><b>Harga (Rp.)</b></label>
                     <br>
                     <input name="harga_tiket" class="form-control" type="number" value="0" id="harga_tiket" style="margin:0px 50px 0px 0px">
