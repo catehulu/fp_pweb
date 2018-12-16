@@ -5,6 +5,7 @@
         <h2>Film : {{$film->nama_film}}</h2>
         <div>
             <h2>Harga tiket : Rp <div id="hargaTiket"></div> </h2>
+            <h2>Stok tiket : <div id="jumlahTiket"></div></h2>
         </div>
     </div>
     <div class="container">
@@ -18,7 +19,7 @@
         <select id="tjadwal">
             <option value="" disabled selected>Pilih Jadwal</option>
             @foreach ($tayang as $tayangs)
-                <option value="{{$tayangs->id_tayang}}">{{$tayangs->waktu_mulai}} sisa tiket : {{$tayangs->jumlah_kursi}}</option>
+                <option value="{{$tayangs->id_tayang}}">{{$tayangs->waktu_mulai}}</option>
             @endforeach
         </select>
         <label for="jumlah_tiket">jumlah_tiket</label>
@@ -49,6 +50,8 @@
                 <h1 id="4"></h1>
                 <label for="5">Jadwal : </label>
                 <h1 id="5"></h1>
+                <label for="6">Total Harga : </label>
+                <h1 id="6"></h1>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -68,10 +71,11 @@
     </div>
 
     <script>
+        var harga;
         $(document).ready(function(){
-            console.log('intitiated');
+        //    console.log('intitiated');
             $("#tjadwal").change(function(){
-                console.log('intitiated');
+            //    console.log('intitiated');
                 $.ajaxSetup({
                       headers: {
                           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -81,8 +85,10 @@
                 $.post('/tayang/'+$(this).val(), function(response){
                     if(response.success)
                     {
-                        console.log(response.tayangan.harga_tiket);
+                    //    console.log(response.tayangan.harga_tiket);
+                        harga = response.tayangan.harga_tiket;
                         $('#hargaTiket').html(response.tayangan.harga_tiket);
+                        $('#jumlahTiket').html(response.tayangan.jumlah_kursi);
                     }
                 }, 'json');
             });
@@ -96,12 +102,14 @@
             var jadwal = tmp.options[tmp.selectedIndex].text;
             var id_tayang = tmp.options[tmp.selectedIndex].value;
             var jumlah_tiket = document.getElementById('tjumlah_tiket').value;
+           // console.log(harga);
 
             document.getElementById('1').innerHTML = nama_pelanggan;
             document.getElementById('2').innerHTML = email;
             document.getElementById('3').innerHTML = no_telp;
             document.getElementById('4').innerHTML = jumlah_tiket;
             document.getElementById('5').innerHTML = jadwal;
+            document.getElementById('6').innerHTML = harga * jumlah_tiket;
 
             document.getElementById('nama_pelanggan').value = nama_pelanggan;
             document.getElementById('email').value = email;
