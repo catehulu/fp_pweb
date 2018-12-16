@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div style="border-style:outset;margin:25px 50px;">
+    <div style="border-style:outset;margin:25px 50px;" class="back">
         <div style="text-align:center;border-bottom:solid gray;margin:25px;">
             <h1 class="mt-3"><b>Form</b></h1>
         </div>
@@ -68,7 +68,7 @@
                         <span id="file-name" class="file-box">Pilih File</span>
                     </label>
                 </div>
-                <button type="submit" class="btn btn-secondary btn-lg mt-4">Submit</button>
+                <button type="submit" class="btn btn-secondary btn-lg mt-4" id="tombol">Submit</button>
             </form>
         </div>
     </div>

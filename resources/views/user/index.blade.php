@@ -1,21 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Sedang Tayang</h1>
-    @foreach ($film as $films)
-        <label for="nama_film">Nama Film</label>
-        <h3 name="nama_film">{{$films->nama_film}}</h3>
-        <label for="durasi">dursai</label>
-        <h3 name="durasi">{{$films->durasi}}</h3>
-        <label for="cover_image">Poster</label>
-        <img src="{{asset('storage/cover_image/'.$films->cover_image.'')}}" alt="">
-        <a href="{{route('user.readone',$films->id_film)}}">Detail</a>
-    @endforeach
-</body>
-</html>
+@extends('layouts.app')
+
+@section('content')
+    <div style="border-style:outset;margin:25px 50px;" class="back">
+        <div style="text-align:center;border-bottom:solid gray;margin:25px;">
+            <h1 class="mt-3"><b>Sedang Tayang</b></h1>
+        </div>
+        <div class="card-columns">
+        @foreach ($film as $films)
+            <div class="card" style="width:300px;">
+                <img class="card-img-top" src="{{asset('storage/cover_image/'.$films->cover_image.'')}}" alt="gambar film" style="width: 100%; height:300px;">
+                <div class="card-body">
+                    <label for="nama_film">Nama Film</label>
+                    <h3 name="nama_film">{{$films->nama_film}}</h3>
+                    <label for="durasi">dursai</label>
+                    <h3 name="durasi">{{$films->durasi}}</h3>
+                    <a href="{{route('admin.readone',$films->id_film)}}" class="btn btn-primary">Detail</a>
+                </div>
+            </div>
+        @endforeach
+        </div>
+    </div>
+@endsection

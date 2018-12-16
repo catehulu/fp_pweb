@@ -1,8 +1,26 @@
+body{
+    background-color: 	#101010;
+}
+
+.back{
+    background-color: #133337;
+    color: #eeeeee;
+}
+
+#tombol{
+    background-color: #003366;
+}
+
 #readfilmjud {
     text-align: center;
-    color: black;
+    color: #eeeeee;
     border-bottom:solid gray;
     margin:25px;
+}
+
+.card{
+    margin: 10px 20px 10px 75px;
+    background-color: #003366;
 }
 
 /* body {
@@ -38,12 +56,12 @@
     color: white;
     margin: 10px 10px 10px 50px;
     border-style:solid black; 
-    background-color: gray;
+    background-color: #101010;
     border-width: 5px;
 }
 
-#isiSinopsis{
-    font-size: 15px;
+.columnsinopsis p{
+    font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -57,7 +75,7 @@
     color: white;
     margin: -10px 0px 10px 50px;
     border-style:solid black; 
-    background-color: gray;
+    background-color: #101010;
     border-width: 5px;
 }
 .columnumuradmin{
@@ -66,11 +84,12 @@
     padding: 0px;
     text-align: center;
     font-size: 25px;
+    font-family: fantasy;
     cursor: pointer;
     color: white;
     margin: -10px 0px 10px 50px;
     border-style:solid black; 
-    background-color: gray;
+    background-color: #101010;
     border-width: 5px;
 }
 .columnbuy{
@@ -83,7 +102,7 @@
     color: white;
     margin: -10px 0px 10px 0px;
     border-style:solid black; 
-    background-color: gray;
+    background-color: #101010;
     border-width: 5px;
 }
 #tombol{
@@ -100,10 +119,10 @@
     font-size: 25px;
     font-family: fantasy;
     cursor: pointer;
-    color: white;
+    color: #eeeeee;
     margin: -10px 10px 10px 60px;
     border-style:solid black; 
-    background-color: gray;
+    background-color: #101010;
     border-width: 5px;
 }
 
@@ -113,11 +132,12 @@
     padding: 0px;
     text-align: left;
     font-size: 25px;
+    font-family: fantasy;
     cursor: pointer;
     color: white;
     margin: 30px 10px 10px 50px;
     border-style:solid black; 
-    background-color: gray;
+    background-color: 	#101010;
     border-width: 5px;
 }
 .columndurasi {
@@ -126,11 +146,12 @@
     padding: 0px;
     text-align: left;
     font-size: 25px;
+    font-family: fantasy;
     cursor: pointer;
     color: white;
     margin: 30px 10px 10px 50px;
     border-style:solid black; 
-    background-color: gray;
+    background-color: #101010;
     border-width: 5px;
 }
 
@@ -140,11 +161,12 @@
     padding: 0px;
     text-align: left;
     font-size: 25px;
+    font-family: fantasy;
     cursor: pointer;
     color: white;
     margin: 30px 10px 30px 50px;
     border-style:solid black; 
-    background-color: gray;
+    background-color: #101010;
     border-width: 5px;
 }
 
