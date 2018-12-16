@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\film;
+use App\tayang;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+use App\transaksi;
 
 class StaffController extends Controller
 {
@@ -67,8 +71,9 @@ class StaffController extends Controller
      */
     public function show($id)
     {
-        $films = film::where('id_film',$id)->first();
-        return view('admin.readone',compact('films'));
+        $films = film::where('id_film',$id)->first();;
+        $tayang = tayang::all()->where('id_film',$id);
+        return view('admin.readone',compact('films','tayang'));
     }
 
     /**
@@ -93,6 +98,11 @@ class StaffController extends Controller
     {
         //
     }
+    
+    public function transaksi(){
+        $transaksi = transaksi::all();
+        return view('admin.transaksi',compact('transaksi'));
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -104,5 +114,41 @@ class StaffController extends Controller
     {
         film::where('id_film',request('id_film'))->delete();
         return redirect()->route('admin.index')->with('success','Film berhasil dihapus');
+    }
+
+    public function createPenayangan($id){
+        $film = film::where('id_film',$id)->first();
+        return view('admin.penayangan',compact('film'));
+    }
+
+    public function storePenayangan(Request $request){
+        $film = film::where('id_film',request('id_film'))->first();
+        $waktumulai = Carbon::createFromFormat('Y-m-d',request('tanggal_film'));
+        $waktumulai->setTime(request('jam-penayangan'),0,0);
+        $cektayang = tayang::where('waktu_mulai',$waktumulai)->where('studio',request('studio'))->first();
+        if($cektayang == NULL){
+            $akhir_tayang = new Carbon($waktumulai);
+            $akhir_tayang->addMinutes($film->durasi);
+            $validateData = $request->validate([
+                'id_film' => 'required',
+                'tanggal_film' => 'required|after:yesterday',
+                'harga_tiket' => 'required',
+                'studio' => 'required',
+            ]);
+
+            tayang::create([
+                'id_film' => request('id_film'),
+                'waktu_mulai' => $waktumulai,
+                'waktu_selesai' => $akhir_tayang,
+                'harga_tiket' => request('harga_tiket'),
+                'studio' => request('studio'),
+                'jumlah_kursi' => 50,
+            ]);
+        }
+        else {
+            return redirect()->route('admin.cPenayangan',request('id_film'))->with('error','Penayangan sudah ada');
+        }
+
+        return redirect()->route('admin.index');
     }
 }
