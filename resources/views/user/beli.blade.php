@@ -1,31 +1,53 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <h2>Film : {{$film->nama_film}}</h2>
+<div style="border-style:outset;margin:25px 50px;">
+    <div style="text-align:left;border-bottom:solid gray;margin:25px;">
+        <h1>Film : {{$film->nama_film}}</h1>
         <div>
             <h2>Harga tiket : Rp <div id="hargaTiket"></div> </h2>
         </div>
     </div>
     <div class="container">
-        <label for="nama_pelanggan">Nama Pelanggan</label>
-        <input type="text" id="tnama_pelanggan">
-        <label for="email">email</label>
-        <input type="email" id="temail">
-        <label for="no_telp">no_telp</label>
-        <input type="text" id="tno_telp">
-        <label for="jadwal">jadwal</label>
-        <select id="tjadwal">
-            <option value="" disabled selected>Pilih Jadwal</option>
-            @foreach ($tayang as $tayangs)
-                <option value="{{$tayangs->id_tayang}}">{{$tayangs->waktu_mulai}} sisa tiket : {{$tayangs->jumlah_kursi}}</option>
-            @endforeach
-        </select>
-        <label for="jumlah_tiket">jumlah_tiket</label>
-        <input type="number" id="tjumlah_tiket" id="">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="checkoutData()">
+        <!-- Nama Pelanggan -->
+        <div class="form-group">
+            <label for="nama_pelanggan">Nama Pelanggan</label>
+            <input name="nama_pelanggan" type="text" class="form-control" id="tnama_pelanggan" placeholder="Nama Pelanggan">
+        </div>
+
+        <!-- E-Mail -->
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input name="email" type="text" class="form-control" id="temail" placeholder="Email">
+        </div>
+
+        <!-- No Telp -->
+        <div class="form-group">
+            <label for="no_telp">No Telp</label>
+            <input name="no_telp" type="text" class="form-control" id="tno_telp" placeholder="No Telp">
+        </div>
+
+        <!-- Jadwal -->
+        <div class="form-group">
+            <label for="jadwal">Jadwal : </label>
+            <select id="tjadwal">
+                <option value="" disabled selected>Pilih Jadwal</option>
+                @foreach ($tayang as $tayangs)
+                    <option value="{{$tayangs->id_tayang}}">{{$tayangs->waktu_mulai}} sisa tiket : {{$tayangs->jumlah_kursi}}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <!-- Jumlah Tiket -->
+        <div class="form-group">
+            <label for="jumlah_tiket">Jumlah Tiket</label>
+            <input name="jumlah_tiket" type="number" class="form-control" id="tjumlah_tiket" placeholder="Jumlah Tiket">
+        </div>
+
+        <button style="font-size:20px;margin:8px 0px 35px 0px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="checkoutData()">
             Launch demo modal
         </button>
+        
     </div>
     
     <!-- Modal -->
@@ -66,7 +88,7 @@
           </div>
         </div>
     </div>
-
+</div>
     <script>
         $(document).ready(function(){
             console.log('intitiated');
