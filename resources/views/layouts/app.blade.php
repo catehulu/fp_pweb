@@ -29,31 +29,35 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav style="font-size:20px" class="navbar navbar-expand-lg bg-dark navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="app/public/21_img.jpg" alt="Logo" style="width:5px;">
+                  </a>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
+                    <ul class="nav mr-auto nav-pills" style="padding:5px;">
+                            <li class="nav-item">
+                              <a class="nav-link" data-toggle="pill" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" data-toggle="pill" href="#profile">Tayangan</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" data-toggle="pill" href="#">Film</a>
+                            </li>
                     </ul>
-
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="nav ml-auto nav-tabs nav-pills">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" data-toggle="pill" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" data-toggle="pill" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -79,8 +83,11 @@
                 </div>
             </div>
         </nav>
-
+        <div class="container">
+            @include('layouts.messages')
+        </div>
         <main class="py-4">
+            
             @yield('content')
         </main>
     </div>
