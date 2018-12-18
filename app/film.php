@@ -9,4 +9,5 @@ class film extends Model
     protected $table = 'table_film';
     protected $fillable = ['nama_film','deskripsi_film','durasi','cover_image','age_rating',
                 'director','produser','genre'];
+    protected $primaryKey = 'id_film';
 }

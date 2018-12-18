@@ -30,8 +30,6 @@ Route::get('/admin/readone/{id}', 'StaffController@show')->name('admin.readone')
 
 Route::post('/admin/delete', 'StaffController@destroy')->name('admin.delete');
 
-Route::patch('/admin/readone/{id}', 'StaffController@update')->name('admin.update');
-
 Route::get('/admin/buat_penayangan/{id}', 'StaffController@createPenayangan')->name('admin.cPenayangan');
 Route::post('/admin/buat_penayangan', 'StaffController@storePenayangan')->name('admin.sPenayangan');
 
@@ -46,3 +44,6 @@ Route::post('/film/beli', 'UserController@checkout')->name('user.checkout');
 
 Route::get('/admin/pelanggan', 'PelangganController@index')->name('pelanggan.index');
 Route::get('/admin/penayangan', 'TayangController@index')->name('tayang.index');
+
+Route::get('/admin/film/edit/{id}', 'StaffController@edit')->name('admin.edit');
+Route::patch('/admin/update/{id}', 'StaffController@update')->name('admin.update');

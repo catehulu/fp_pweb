@@ -8,6 +8,7 @@ use App\tayang;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\transaksi;
+use Illuminate\Support\Facades\File;
 
 class StaffController extends Controller
 {
@@ -84,7 +85,8 @@ class StaffController extends Controller
      */
     public function edit($id)
     {
-        //
+        $films = film::where('id_film',$id)->first();
+        return view('admin.editfilm',compact('films'));
     }
 
     /**
@@ -96,7 +98,25 @@ class StaffController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $filename = pathinfo($request->file('cover_image')->getClientOriginalName(), PATHINFO_FILENAME);
+        $uniqueFilename = $filename.'_'.time().'.'.$request->file('cover_image')->getClientOriginalExtension();
+        
+        $edit = film::where('id_film',$id)->first();
+        $file_path = app_path($edit->cover_image);
+        $edit->update([
+            'nama_film' => request('nama_film'),
+            'deskripsi_film' => request('deskripsi_film'),
+            'durasi' => request('durasi'),
+            'age_rating' => request('age_rating'),
+            'genre' => request('genre'),
+            'produser' => request('produser'),
+            'director' => request('director'),
+            'cover_image' => $uniqueFilename,
+        ]);
+        if(File::exists($file_path)) File::delete($file_path);
+        $path = $request->file('cover_image')->storeAs('public/cover_image',$uniqueFilename);
+
+        return redirect()->route('admin.index')->with('success','Film berhasil diupdate!');
     }
     
     public function transaksi(){
@@ -112,7 +132,9 @@ class StaffController extends Controller
      */
     public function destroy(Request $request)
     {
-        film::where('id_film',request('id_film'))->delete();
+        $film = film::where('id_film',request('id_film'));
+        $file_path = app_path($film->cover_image);
+        if(File::exists($file_path)) File::delete($file_path);
         return redirect()->route('admin.index')->with('success','Film berhasil dihapus');
     }
 

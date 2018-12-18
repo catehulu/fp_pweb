@@ -29,12 +29,6 @@
                     <h2>21+</h2>
                 @endif
             </div>
-<<<<<<< HEAD
-            <div class="column columnbuy" style="border-style: groove;">
-                <h2>button Buy</h2>  
-            </div>
-=======
->>>>>>> frontEnd
             <div class="column columngenre" style="border-style: groove;">
                 <h2 id="genre">Genre : {{$films->genre}}</h2>
             </div>
@@ -57,10 +51,8 @@
                         +
                     </a>
                 </div>
->>>>>>> frontEnd
             </div>
         </div>
-
         <div class="row">
             <div class="column columndurasi" style="border-style: groove;">
                 <h2>Durasi : {{$films->durasi}} menit</h2>
@@ -76,7 +68,7 @@
 
         <div>
             <span><a href="{{route('admin.index')}}" id="tombolkembali" class="btn btn-outline-secondary">Kembali</a></span>
-            <span><button type="button" id="tomboledit" class="btn btn-outline-secondary">Edit</button></span>
+            <span><a href="{{route('admin.edit',$films->id_film)}}" id="tombolkembali" class="btn btn-outline-secondary">Edit</a></span>
             <span><button type="submit" id="tomboldelete" class="btn btn-outline-secondary" form="delete">Delete</button></span>
             <form id="delete" action="{{route('admin.delete')}}" method="post" hidden>
                     @csrf
