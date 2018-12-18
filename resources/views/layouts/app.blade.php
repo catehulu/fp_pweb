@@ -48,9 +48,10 @@
                                             Data <span class="caret"></span>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="nav-link" href="{{route('admin.dataPelanggan')}}">Data Pelanggan</a>
+                                        <a class="nav-link" href="{{route('pelanggan.index')}}">Data Pelanggan</a>
                                         <a class="nav-link" href="{{route('admin.index')}}">List Film</a>
                                         <a class="nav-link" href="{{route('admin.transaksi')}}">History Transaksi</a>
+                                        <a class="nav-link" href="{{route('tayang.index')}}">History Penayangan</a>
                                     </div>
                                 </li>
                             @endauth
