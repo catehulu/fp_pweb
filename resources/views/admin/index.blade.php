@@ -3,7 +3,7 @@
 @section('content')
     <div style="border-style:outset" class="back container" align="center">
         <div style="text-align:center;border-bottom:solid gray;margin:25px;">
-            <h1 class="mt-3"><b>Sedang Tayang</b></h1>
+            <h1 class="mt-3"><b>List Film</b></h1>
         </div>
         <div class="card-columns">
         @foreach ($film as $films)

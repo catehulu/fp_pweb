@@ -19,7 +19,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $film = DB::select('select distinct f.* from table_film f,table_tayang t where f.id_film = t.id_film');
+        $film = DB::select('select distinct f.* from table_film f,table_tayang t where f.id_film = t.id_film AND t.deleted_at IS NULL ');
         return view('user.index',compact('film'));
     }
 
@@ -60,7 +60,7 @@ class UserController extends Controller
 
     public function buy($id)
     {
-        $film = film::where('id_film',$id)->first();;
+        $film = film::where('id_film',$id)->first();
         $tayang = tayang::where('id_film',$id)->where('jumlah_kursi','!=',0)->get();
         return view('user.beli',compact('film','tayang'));
     }

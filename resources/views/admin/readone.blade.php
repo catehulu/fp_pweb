@@ -46,6 +46,11 @@
                 @else
                     <span><h2 style="margin: 10px 0px 0px 10px; font-family: fantasy;">Penayangan untuk film ini tidak ada</h2></span>
                 @endif
+                <div class="d-flex justify-content-end">
+                    <a href="{{route('admin.cPenayangan',$films->id_film)}}" class="btn btn-secondary rounded-circle" style="margin-right: 3vh;margin-bottom: 3vh;">
+                        +
+                    </a>
+                </div>
             </div>
         </div>
 

@@ -43,3 +43,6 @@ Route::get('/film/{id}', 'UserController@show')->name('user.readone');
 Route::get('/film/beli/{id}', 'UserController@buy')->name('user.beli');
 Route::post('/tayang/{id}', 'UserController@getTayangan');
 Route::post('/film/beli', 'UserController@checkout')->name('user.checkout');
+
+Route::get('/admin/pelanggan', 'PelangganController@index')->name('pelanggan.index');
+Route::get('/admin/penayangan', 'TayangController@index')->name('tayang.index');
