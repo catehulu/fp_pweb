@@ -38,16 +38,20 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav mr-auto nav-pills" style="padding:5px;">
-                            <li class="nav-item">
+                    <ul class="nav mr-auto" style="padding:5px;">
+                            <li class="nav-item nav-pills">
                               <a class="nav-link" href="{{route('user.index')}}">Sedang Tayang</a>
                             </li>
                             @auth
-                                <li class="nav-item">
-                                <a class="nav-link" href="{{route('admin.index')}}">List Film</a>
-                                </li>
-                                <li class="nav-item">
-                                <a class="nav-link" href="{{route('admin.transaksi')}}">History Transaksi</a>
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle nav-pills" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            Data <span class="caret"></span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="nav-link" href="{{route('admin.dataPelanggan')}}">Data Pelanggan</a>
+                                        <a class="nav-link" href="{{route('admin.index')}}">List Film</a>
+                                        <a class="nav-link" href="{{route('admin.transaksi')}}">History Transaksi</a>
+                                    </div>
                                 </li>
                             @endauth
                     </ul>
