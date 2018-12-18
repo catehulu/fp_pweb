@@ -29,6 +29,12 @@
                     <h2>21+</h2>
                 @endif
             </div>
+<<<<<<< HEAD
+            <div class="column columnbuy" style="border-style: groove;">
+                <h2>button Buy</h2>  
+            </div>
+=======
+>>>>>>> frontEnd
             <div class="column columngenre" style="border-style: groove;">
                 <h2 id="genre">Genre : {{$films->genre}}</h2>
             </div>
@@ -51,6 +57,7 @@
                         +
                     </a>
                 </div>
+>>>>>>> frontEnd
             </div>
         </div>
 

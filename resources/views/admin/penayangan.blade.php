@@ -17,6 +17,7 @@
                         <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span><input type="date" class="form-control" id="tanggal_film" name="tanggal_film" placeholder="Enter date">
                     </div>
                 </div>  
+>>>>>>> frontEnd
                 <!--jam penayangan -->
                 <div class="form-group inputPenayangan" style="border-style:solid;border-color:gray;padding:10px">
                     <label for="jamPenayangan"><b>Jam Penayangan</b></label>
